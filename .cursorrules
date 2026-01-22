@@ -1,0 +1,161 @@
+# XBit Project - Cursor Rules
+
+## Project Overview
+XBit is a Swedish IT support company website built with React, TypeScript, Vite, and Tailwind CSS. The project uses shadcn-ui components and follows modern React best practices.
+
+## Technology Stack
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: shadcn-ui (Radix UI primitives)
+- **Routing**: React Router DOM
+- **State Management**: React Query (TanStack Query)
+- **Icons**: Lucide React
+
+## Code Style & Conventions
+
+### TypeScript
+- Use TypeScript for all components and utilities
+- Prefer explicit types over `any`
+- Use interfaces for component props
+- Export types when they might be reused
+
+### React Components
+- Use functional components with hooks
+- Prefer named exports for components
+- Keep components focused and single-purpose
+- Use proper prop typing with TypeScript
+- Follow the existing component structure in `/src/components`
+
+### Styling
+- Use Tailwind CSS utility classes
+- Follow the existing design system in `src/index.css`
+- Use custom utilities: `text-gradient`, `bg-gradient-primary`, `glass`, etc.
+- Maintain consistent spacing using Tailwind's spacing scale
+- Use the color system defined in CSS variables (primary, accent, muted, etc.)
+
+### File Organization
+- Components in `/src/components`
+- Pages in `/src/pages`
+- UI components (shadcn) in `/src/components/ui`
+- Utilities in `/src/lib`
+- Hooks in `/src/hooks`
+- Styles in `/src` (index.css, App.css)
+
+### Naming Conventions
+- Components: PascalCase (e.g., `Header.tsx`, `Hero.tsx`)
+- Files: Match component name
+- Functions: camelCase
+- Constants: UPPER_SNAKE_CASE or camelCase depending on context
+- CSS classes: Follow Tailwind conventions
+
+## Design System
+
+### Colors
+- Primary: Orange (#FF6B35) - XBit brand color
+- Accent: Amber - warm glow effects
+- Background: Dark blue-gray (220 20% 8%)
+- Text: Light gray (210 40% 98%)
+
+### Typography
+- Display font: Space Grotesk (headings)
+- Body font: Inter (body text)
+- Use `font-display` class for headings
+- Maintain consistent font sizes using Tailwind typography scale
+
+### Animations
+- Use existing animation utilities: `animate-fade-in`, `animate-float`, `animate-pulse-glow`
+- Prefer CSS animations over JavaScript for performance
+- Add smooth transitions (duration-300) for interactive elements
+
+### Components
+- Use glass morphism effect (`glass` class) for elevated cards
+- Maintain consistent border radius (rounded-2xl for cards)
+- Use hover effects: `hover:-translate-y-1`, `hover:border-primary/50`
+- Icons should be consistent size (w-5 h-5 for small, w-7 h-7 for medium)
+
+## Best Practices
+
+### Accessibility
+- Use semantic HTML elements
+- Include proper ARIA labels where needed
+- Ensure keyboard navigation works
+- Maintain proper heading hierarchy
+- Use descriptive link text
+
+### Performance
+- Lazy load images when appropriate
+- Use React.memo for expensive components if needed
+- Optimize bundle size
+- Use Vite's code splitting
+
+### SEO
+- Use proper heading hierarchy (h1, h2, h3)
+- Include meta descriptions
+- Use semantic HTML
+- Ensure proper link structure
+
+### Swedish Language
+- All user-facing text is in Swedish
+- Maintain consistent terminology
+- Use proper Swedish formatting for phone numbers, dates, etc.
+
+## Common Patterns
+
+### Navigation
+- Use anchor links for smooth scrolling (#services, #rut, #about, #contact)
+- Header should be fixed with glass effect on scroll
+- Mobile menu should be accessible and animated
+
+### Buttons
+- Use shadcn Button component
+- Variants: `hero`, `heroOutline` for CTAs
+- Include icons from lucide-react when appropriate
+
+### Sections
+- Use consistent padding: `py-32` for major sections
+- Container: `container mx-auto px-6`
+- Section headers: centered with max-width-2xl
+
+## Development Workflow
+
+### Running the Project
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run lint     # Run ESLint
+npm test         # Run tests
+```
+
+### Adding New Components
+1. Create component file in appropriate directory
+2. Use TypeScript with proper typing
+3. Follow existing component patterns
+4. Export as default or named export
+5. Import and use in pages/components
+
+### Styling New Components
+1. Use Tailwind utility classes
+2. Leverage existing design system variables
+3. Use glass effect for cards/elevated elements
+4. Add hover states and transitions
+5. Ensure mobile responsiveness
+
+## Testing
+- Write tests for complex logic
+- Use Vitest for unit tests
+- Test components with React Testing Library
+- Maintain test coverage for critical paths
+
+## Git & Version Control
+- Write clear commit messages
+- Keep commits focused and atomic
+- Use conventional commit format when possible
+
+## Notes
+- Phone number format: 010 - 14 88 777 (with spaces)
+- Email: info@xbit.se
+- Company: XBIT - Teknik & IT-Support AB
+- Org.nr: 559329-9257
+- RUT-avdrag is a key selling point (50% tax deduction)
