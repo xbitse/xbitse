@@ -43,11 +43,9 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 animate-fade-in mb-12" style={{ animationDelay: '0.3s' }}>
-              <Button variant="hero" size="xl" asChild>
-                <a href="https://xbit.servicedesk.atera.com/GetAgent/Windows/?cid=58&aid=0013z00002hmUIRAA2" target="_blank" rel="noopener noreferrer">
-                  Boka IT-support
-                  <ArrowRight className="w-5 h-5" />
-                </a>
+              <Button variant="hero" size="xl" onClick={() => setIsBookingOpen(true)}>
+                Boka IT-support
+                <ArrowRight className="w-5 h-5" />
               </Button>
             </div>
 
