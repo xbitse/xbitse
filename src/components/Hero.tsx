@@ -16,7 +16,7 @@ const Hero = () => {
       zIndex: 0 
     }}>
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/80 dark:from-black/80 via-white/30 dark:via-black/20 to-background dark:to-background" style={{ zIndex: 1 }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/90 dark:from-black/90 via-white/30 dark:via-black/20 to-background dark:to-background" style={{ zIndex: 1 }} />
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 0 }}>
