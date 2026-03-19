@@ -30,7 +30,7 @@ const Hero = () => {
           {/* Left side - Text content */}
           <div className="text-center lg:text-left pt-12 lg:pt-16">
             {/* Main Heading */}
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 animate-fade-in mt-8" style={{ animationDelay: '0.1s' }}>
               Teknik & IT-Support{" "}
               <span className="text-gradient">för alla</span>
             </h1>
