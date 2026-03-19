@@ -33,7 +33,7 @@ const CTA = () => {
                 Boka IT-support
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button variant="outline" size="xl" asChild>
+              <Button variant="hero" size="xl" asChild>
                 <a href="https://xbit.servicedesk.atera.com/GetAgent/Windows/?cid=58&aid=0013z00002hmUIRAA2" target="_blank" rel="noopener noreferrer">
                   Fjärrsupport
                   <ArrowRight className="w-5 h-5" />
