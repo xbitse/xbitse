@@ -1,4 +1,5 @@
 import { Shield, Clock, Users, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const features = [
   {
@@ -60,6 +61,15 @@ const About = () => {
               </p>
             </div>
           ))}
+        </div>
+        
+        {/* Fjärrsupport Button */}
+        <div className="text-center mt-12">
+          <Button variant="outline" size="lg" asChild>
+            <a href="https://xbit.servicedesk.atera.com/GetAgent/Windows/?cid=58&aid=0013z00002hmUIRAA2" target="_blank" rel="noopener noreferrer">
+              Fjärrsupport
+            </a>
+          </Button>
         </div>
       </div>
     </section>
