@@ -55,16 +55,16 @@ const Hero = () => {
             <div className="grid grid-cols-3 gap-8 pt-10 border-t border-border/30 animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <div>
                 <div className="text-3xl md:text-4xl font-display font-bold text-gradient">30+</div>
-                <div className="text-sm text-muted-foreground mt-1">Års erfarenhet</div>
+                <div className="text-sm text-muted-foreground dark:text-white mt-1">Års erfarenhet</div>
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-display font-bold text-gradient">50%</div>
-                <div className="text-sm text-muted-foreground mt-1">RUT-avdrag</div>
+                <div className="text-sm text-muted-foreground dark:text-white mt-1">RUT-avdrag</div>
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-display font-bold text-gradient">08-22</div>
-                <div className="text-sm text-muted-foreground mt-1">Öppet alla dagar</div>
-                <div className="text-xs text-muted-foreground mt-0.5">Jour: Mån-Fre 18-22</div>
+                <div className="text-sm text-muted-foreground dark:text-white mt-1">Öppet alla dagar</div>
+                <div className="text-xs text-muted-foreground dark:text-white mt-0.5">Jour: Mån-Fre 18-22</div>
               </div>
             </div>
           </div>
