@@ -8,44 +8,23 @@ const Hero = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ 
+      backgroundImage: 'url(/spring-background.png)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      zIndex: 0 
+    }}>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/80 dark:from-black/80 via-white/30 dark:via-black/20 to-background dark:to-background" style={{ zIndex: 1 }} />
+      
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 0 }}>
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-logo-blue/15 rounded-full blur-3xl animate-float" />
       </div>
 
-      {/* Snow Animation */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 1 }}>
-        {Array.from({ length: 22 }).map((_, i) => {
-          // Random position för varje snöflinga
-          const randomLeft = Math.random() * 100;
-          const randomTop = -50 - Math.random() * 50; // Starta mellan -50px och -100px (ovanför skärmen)
-          const randomDelay = Math.random() * 2;
-          const randomDuration = 24 + Math.random() * 9; // 24-33 sekunder
-          const isLarge = [7, 15, 18, 20, 21].includes(i); // 5 stora snöflingor
-          const largeSize = 2 + Math.random() * 2; // 2-4 gånger större
-          const normalSize = 0.5 + Math.random() * 0.6; // 0.5-1.1em
-          
-          return (
-            <div 
-              key={i} 
-              className="snowflake"
-              style={{
-                left: `${randomLeft}%`,
-                top: `${randomTop}px`,
-                animationDelay: `${randomDelay}s`,
-                animationDuration: `${randomDuration}s`,
-                fontSize: isLarge ? `${largeSize}em` : `${normalSize}em`,
-                opacity: isLarge ? 0.5 : 0.3 + Math.random() * 0.15,
-              }}
-            >
-              ❄
-            </div>
-          );
-        })}
-      </div>
-
+      
       <div className="container mx-auto px-6 relative" style={{ zIndex: 10 }}>
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
           {/* Left side - Text content */}
@@ -57,7 +36,7 @@ const Hero = () => {
             </h1>
 
             {/* Subheading */}
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-10 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl md:text-2xl text-muted-foreground dark:text-white max-w-2xl mx-auto lg:mx-0 mb-10 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Säker och professionell service direkt hemma hos dig eller på ditt företag. 
               Dator, telefon, surfplatta, internet och TV – vi hjälper dig med allt.
             </p>

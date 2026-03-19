@@ -30,6 +30,20 @@ const Header = () => {
     { href: "#contact", label: "Kontakt" },
   ];
 
+  // Debug function for testing hash navigation (can be called from browser console)
+  if (typeof window !== 'undefined') {
+    (window as any).testHashLinks = () => {
+      const hashLinks = navLinks.filter(link => link.href.startsWith('#'));
+      console.log('Testing hash links:', hashLinks);
+
+      hashLinks.forEach(link => {
+        const targetId = link.href.substring(1);
+        const element = document.getElementById(targetId);
+        console.log(`${link.label} (${link.href}) -> ${targetId}:`, element ? 'FOUND' : 'NOT FOUND');
+      });
+    };
+  }
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -48,17 +62,47 @@ const Header = () => {
             const isHashLink = link.href.startsWith("#");
             
             if (isHashLink) {
-              // Hash links - go to home page first if not already there
+              // Hash links - smooth scroll to section
               const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+                e.preventDefault();
+
                 if (!isHomePage) {
-                  e.preventDefault();
+                  // Navigate to home page first, then scroll to section
                   window.location.href = `/${link.href}`;
+                } else {
+                  // Already on home page, scroll directly to section
+                  const targetId = link.href.substring(1); // Remove the #
+                  let attempts = 0;
+                  const maxAttempts = 10;
+
+                  const tryScroll = () => {
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                      // Element found, scroll to it
+                      requestAnimationFrame(() => {
+                        targetElement.scrollIntoView({
+                          behavior: 'smooth',
+                          block: 'start'
+                        });
+                      });
+                    } else if (attempts < maxAttempts) {
+                      // Element not found yet, try again after a short delay
+                      attempts++;
+                      setTimeout(tryScroll, 100);
+                    } else {
+                      console.warn(`Element with id "${targetId}" not found after ${maxAttempts} attempts`);
+                    }
+                  };
+
+                  tryScroll();
                 }
               };
+
               return (
                 <a
                   key={link.href}
-                  href={isHomePage ? link.href : `/${link.href}`}
+                  href={link.href}
                   onClick={handleClick}
                   className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
                 >
@@ -106,16 +150,46 @@ const Header = () => {
               
               if (isHashLink) {
                 const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+                  e.preventDefault();
                   setIsMobileMenuOpen(false);
+
                   if (!isHomePage) {
-                    e.preventDefault();
+                    // Navigate to home page first, then scroll to section
                     window.location.href = `/${link.href}`;
+                  } else {
+                    // Already on home page, scroll directly to section
+                    const targetId = link.href.substring(1); // Remove the #
+                    let attempts = 0;
+                    const maxAttempts = 10;
+
+                    const tryScroll = () => {
+                      const targetElement = document.getElementById(targetId);
+
+                      if (targetElement) {
+                        // Element found, scroll to it
+                        requestAnimationFrame(() => {
+                          targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                          });
+                        });
+                      } else if (attempts < maxAttempts) {
+                        // Element not found yet, try again after a short delay
+                        attempts++;
+                        setTimeout(tryScroll, 100);
+                      } else {
+                        console.warn(`Element with id "${targetId}" not found after ${maxAttempts} attempts`);
+                      }
+                    };
+
+                    tryScroll();
                   }
                 };
+
                 return (
                   <a
                     key={link.href}
-                    href={isHomePage ? link.href : `/${link.href}`}
+                    href={link.href}
                     onClick={handleClick}
                     className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium"
                   >

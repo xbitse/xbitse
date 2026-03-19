@@ -88,20 +88,6 @@ const Prislista = () => {
       priceAfterRut: "648 kr*",
     },
     {
-      icon: Tv,
-      title: "Kanalsökning",
-      description: "Kanalsökning, kanalsortering samt test av fjärrkontroll.",
-      price: "1 295 kr",
-      priceAfterRut: "648 kr*",
-    },
-    {
-      icon: Monitor,
-      title: "Personal Shopper",
-      description: "Vi kommer hem till dig och diskuterar dina behov. Vi går igenom vad du bör tänka på och återkommer med förslag baserade på dina önskemål och behov.",
-      price: "1 295 kr",
-      priceAfterRut: "648 kr*",
-    },
-    {
       icon: Smartphone,
       title: "Bank-ID",
       description: "Vi hjälper dig att ställa in BankID på din dator och mobil.",

@@ -189,18 +189,7 @@
     opacity: 0;
   }
 
-  .snowflake {
-    position: absolute;
-    color: rgba(255, 255, 255, 0.4);
-    font-family: Arial, sans-serif;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-    animation: snowfall linear infinite;
-    pointer-events: none;
-    filter: blur(0.5px);
-    font-size: 0.5em;
-    opacity: 0.3;
   }
-}
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
@@ -229,25 +218,6 @@
   }
 }
 
-@keyframes snowfall {
-  0% {
-    transform: translateY(0) translateX(0) rotate(0deg);
-    opacity: 0;
-  }
-  5% {
-    opacity: 0.3;
-  }
-  50% {
-    transform: translateY(calc(50vh + 100px)) translateX(20px) rotate(180deg);
-  }
-  95% {
-    opacity: 0.3;
-  }
-  100% {
-    transform: translateY(calc(120vh + 100px)) translateX(-20px) rotate(360deg);
-    opacity: 0;
-  }
-}
 
 /* Hide reCAPTCHA badge - we show notice in form instead */
 .grecaptcha-badge {
