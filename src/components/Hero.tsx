@@ -36,7 +36,7 @@ const Hero = () => {
             </h1>
 
             {/* Subheading */}
-            <p className="text-xl md:text-2xl text-muted-foreground dark:text-white max-w-2xl mx-auto lg:mx-0 mb-10 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl md:text-2xl text-black dark:text-white max-w-2xl mx-auto lg:mx-0 mb-10 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Säker och professionell service direkt hemma hos dig eller på ditt företag. 
               Dator, telefon, surfplatta, internet och TV – vi hjälper dig med allt.
             </p>
