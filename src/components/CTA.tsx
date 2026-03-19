@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Clock } from "lucide-react";
+import { ArrowRight, Mail, Clock, Phone } from "lucide-react";
 import BookingDialog from "./BookingDialog";
 
 const CTA = () => {
@@ -45,13 +45,13 @@ const CTA = () => {
             <div className="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto pt-8 border-t border-border/30">
               <div className="flex flex-col items-center gap-2">
                 <Mail className="w-5 h-5 text-primary" />
-                <a href="mailto:info@xbit.se" className="text-sm text-muted-foreground hover:text-primary transition-colors">info@xbit.se</a>
+                <span className="text-sm text-muted-foreground hover:text-primary transition-colors">Email</span>
+                <span className="font-medium">info@xbit.se</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <Clock className="w-5 h-5 text-primary" />
-                <span className="text-sm text-muted-foreground">Öppettider</span>
-                <span className="font-medium">08.00 - 22.00</span>
-                <span className="text-xs text-muted-foreground">Jour: Mån-Fre 18.00-22.00</span>
+                <Phone className="w-5 h-5 text-primary" />
+                <span className="text-sm text-muted-foreground">Telefon</span>
+                <span className="font-medium">08-123 456 78</span>
               </div>
             </div>
           </div>
