@@ -62,7 +62,7 @@ const CTA = () => {
               {/* Right side - Image */}
               <div className="relative">
                 <img 
-                  src="/xbit-support.png" 
+                  src={`${import.meta.env.BASE_URL}xbit-support.png`} 
                   alt="IT-support tekniker hjälper kund med datorproblem" 
                   className="w-full h-auto"
                 />
