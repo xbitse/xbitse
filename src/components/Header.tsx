@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import BookingDialog from "./BookingDialog";
@@ -8,11 +8,13 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   
-  const isHomePage = location.pathname === "/" || location.hash === "#/";
+  const isProduction = import.meta.env.PROD;
+  const isHomePage = location.pathname === "/" || (!isProduction && location.pathname === "/");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,7 +70,7 @@ const Header = () => {
 
                 if (!isHomePage) {
                   // Navigate to home page first, then scroll to section
-                  window.location.href = `${link.href}`;
+                  navigate(`/${link.href}`);
                 } else {
                   // Already on home page, scroll directly to section
                   const targetId = link.href.substring(1); // Remove the #
@@ -149,13 +151,13 @@ const Header = () => {
               const isHashLink = link.href.startsWith("#");
               
               if (isHashLink) {
-                const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+                const handleMobileClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
                   e.preventDefault();
                   setIsMobileMenuOpen(false);
 
                   if (!isHomePage) {
                     // Navigate to home page first, then scroll to section
-                    window.location.href = `/${link.href}`;
+                    navigate(`/${link.href}`);
                   } else {
                     // Already on home page, scroll directly to section
                     const targetId = link.href.substring(1); // Remove the #
@@ -190,7 +192,7 @@ const Header = () => {
                   <a
                     key={link.href}
                     href={link.href}
-                    onClick={handleClick}
+                    onClick={handleMobileClick}
                     className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium"
                   >
                     {link.label}

@@ -1,14 +1,15 @@
 import { Mail, Phone } from "lucide-react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 
 const Footer = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === "/" || location.hash === "#/";
 
   const handleHashLink = (hash: string) => {
     if (!isHomePage) {
-      window.location.href = `#${hash}`;
+      navigate(`/${hash}`);
     }
   };
 
