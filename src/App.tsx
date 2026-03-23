@@ -20,7 +20,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <HashRouter>
+        <HashRouter basename="/xbitse/">
           <CookieConsent />
           <Routes>
             <Route path="/" element={<Index />} />
