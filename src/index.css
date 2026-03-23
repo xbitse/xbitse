@@ -159,6 +159,19 @@
     background-image: var(--gradient-card);
   }
 
+  .animate-scroll-slow {
+    animation: scroll-horizontal 30s linear infinite;
+  }
+
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
   .glow-primary {
     box-shadow: var(--glow-primary);
   }

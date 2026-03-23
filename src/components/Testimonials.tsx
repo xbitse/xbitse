@@ -59,13 +59,13 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Auto-scrolling container */}
-        <div className="overflow-x-auto pb-6">
-          <div className="flex gap-6 min-w-max md:min-w-0">
+        {/* Auto-scrolling container - wider cards, no scrollbar */}
+        <div className="overflow-x-auto overflow-y-hidden pb-6">
+          <div className="flex gap-8 min-w-max md:min-w-0 animate-scroll-slow">
             {testimonials.map((testimonial, index) => (
               <article
                 key={index}
-                className="flex-shrink-0 w-80 bg-card border border-border/50 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                className="flex-shrink-0 w-96 bg-card border border-border/50 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
               >
                 {/* Header with rating */}
                 <div className="flex items-start justify-between mb-6">
