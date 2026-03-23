@@ -10,6 +10,7 @@ const RutInfo = lazy(() => import("@/components/RutInfo"));
 const About = lazy(() => import("@/components/About"));
 const CTA = lazy(() => import("@/components/CTA"));
 const FAQ = lazy(() => import("@/components/FAQ"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
 
 const Index = () => {
   return (
@@ -37,6 +38,9 @@ const Index = () => {
         </Suspense>
         <Suspense fallback={<div className="h-96" />}>
         <FAQ />
+        </Suspense>
+        <Suspense fallback={<div className="h-96" />}>
+        <Testimonials />
         </Suspense>
       </main>
       <Footer />
