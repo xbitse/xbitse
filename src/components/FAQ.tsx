@@ -47,7 +47,6 @@ const faqItems = [
 const FAQ = () => {
   return (
     <section id="faq" className="py-32 relative overflow-hidden bg-[#004188] dark:bg-gradient-hero">
-      <div className="absolute inset-0 bg-gradient-hero opacity-50" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
