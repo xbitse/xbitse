@@ -44,22 +44,32 @@ const About = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className="group p-8 rounded-2xl glass hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 text-center"
-            >
-              <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 mx-auto group-hover:glow-primary transition-all duration-300">
-                <feature.icon className="w-7 h-7 text-primary-foreground" />
+          {features.map((feature, index) => {
+            const backgrounds = [
+              "bg-blue-50/80 dark:bg-blue-950/20",
+              "bg-purple-50/80 dark:bg-purple-950/20", 
+              "bg-orange-50/80 dark:bg-orange-950/20",
+              "bg-green-50/80 dark:bg-green-950/20"
+            ];
+            
+            return (
+              <div
+                key={feature.title}
+                className={`group p-8 rounded-2xl ${backgrounds[index % backgrounds.length]} border border-border/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 text-center relative overflow-hidden shadow-sm hover:shadow-lg`}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5 dark:to-black/20" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 mx-auto group-hover:glow-primary transition-all duration-300 relative z-10">
+                  <feature.icon className="w-7 h-7 text-primary-foreground" />
+                </div>
+                <h3 className="font-display text-xl font-semibold mb-3 relative z-10">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed relative z-10">
+                  {feature.description}
+                </p>
               </div>
-              <h3 className="font-display text-xl font-semibold mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
