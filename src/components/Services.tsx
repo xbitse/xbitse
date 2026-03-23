@@ -74,18 +74,18 @@ const Services = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {services.map((service, index) => {
             const gradients = [
-              "bg-gradient-to-br from-blue-500/10 to-cyan-500/10",
-              "bg-gradient-to-br from-purple-500/10 to-pink-500/10", 
-              "bg-gradient-to-br from-orange-500/10 to-red-500/10",
-              "bg-gradient-to-br from-green-500/10 to-emerald-500/10",
-              "bg-gradient-to-br from-indigo-500/10 to-blue-500/10",
-              "bg-gradient-to-br from-amber-500/10 to-yellow-500/10"
+              "bg-gradient-to-tr from-slate-900/5 to-slate-700/5",
+              "bg-gradient-to-bl from-blue-900/5 to-cyan-700/5", 
+              "bg-gradient-to-tl from-purple-900/5 to-pink-700/5",
+              "bg-gradient-to-br from-emerald-900/5 to-green-700/5",
+              "bg-gradient-to-r from-orange-900/5 to-red-700/5",
+              "bg-gradient-to-t from-indigo-900/5 to-blue-700/5"
             ];
             
             return (
               <div
                 key={service.title}
-                className={`group p-8 rounded-2xl ${gradients[index % gradients.length]} border border-border/50 hover:border-logo-blue/50 transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm`}
+                className={`group p-8 rounded-2xl ${gradients[index % gradients.length]} border border-border/50 hover:border-logo-blue/50 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:glow-primary transition-all duration-300">
@@ -119,15 +119,15 @@ const Services = () => {
           {financeServices.map((service, index) => {
             const Icon = service.icon;
             const gradients = [
-              "bg-gradient-to-br from-rose-500/10 to-pink-500/10",
-              "bg-gradient-to-br from-teal-500/10 to-cyan-500/10", 
-              "bg-gradient-to-br from-violet-500/10 to-purple-500/10"
+              "bg-gradient-to-l from-slate-800/5 to-slate-600/5",
+              "bg-gradient-to-b from-blue-800/5 to-cyan-600/5", 
+              "bg-gradient-to-tr from-purple-800/5 to-pink-600/5"
             ];
             
             return (
               <div
                 key={service.title}
-                className={`group p-8 rounded-2xl ${gradients[index % gradients.length]} border border-border/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full backdrop-blur-sm`}
+                className={`group p-8 rounded-2xl ${gradients[index % gradients.length]} border border-border/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full shadow-sm hover:shadow-lg`}
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:glow-primary transition-all duration-300">
                   <Icon className="w-7 h-7 text-primary-foreground" />
