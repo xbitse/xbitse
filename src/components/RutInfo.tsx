@@ -55,8 +55,9 @@ const RutInfo = () => {
 
           {/* Right - Info Cards */}
           <div className="grid gap-6">
-            <div className="p-8 rounded-2xl glass hover:border-primary/50 transition-all duration-300">
-              <div className="flex items-start gap-4">
+            <div className="p-8 rounded-2xl bg-blue-50/80 dark:bg-blue-950/20 border border-border/50 hover:border-primary/50 transition-all duration-300 relative overflow-hidden shadow-sm hover:shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5 dark:to-black/20" />
+              <div className="flex items-start gap-4 relative z-10">
                 <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
                   <Percent className="w-7 h-7 text-primary-foreground" />
                 </div>
@@ -69,8 +70,9 @@ const RutInfo = () => {
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl glass hover:border-primary/50 transition-all duration-300">
-              <div className="flex items-start gap-4">
+            <div className="p-8 rounded-2xl bg-purple-50/80 dark:bg-purple-950/20 border border-border/50 hover:border-primary/50 transition-all duration-300 relative overflow-hidden shadow-sm hover:shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5 dark:to-black/20" />
+              <div className="flex items-start gap-4 relative z-10">
                 <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
                   <Home className="w-7 h-7 text-primary-foreground" />
                 </div>
@@ -83,8 +85,9 @@ const RutInfo = () => {
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl glass hover:border-primary/50 transition-all duration-300">
-              <div className="flex items-start gap-4">
+            <div className="p-8 rounded-2xl bg-orange-50/80 dark:bg-orange-950/20 border border-border/50 hover:border-primary/50 transition-all duration-300 relative overflow-hidden shadow-sm hover:shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5 dark:to-black/20" />
+              <div className="flex items-start gap-4 relative z-10">
                 <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
                   <FileText className="w-7 h-7 text-primary-foreground" />
                 </div>
