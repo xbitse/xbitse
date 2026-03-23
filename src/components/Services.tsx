@@ -73,28 +73,29 @@ const Services = () => {
         {/* IT Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {services.map((service, index) => {
-            const gradients = [
-              "bg-gradient-to-tr from-slate-900/5 to-slate-700/5",
-              "bg-gradient-to-bl from-blue-900/5 to-cyan-700/5", 
-              "bg-gradient-to-tl from-purple-900/5 to-pink-700/5",
-              "bg-gradient-to-br from-emerald-900/5 to-green-700/5",
-              "bg-gradient-to-r from-orange-900/5 to-red-700/5",
-              "bg-gradient-to-t from-indigo-900/5 to-blue-700/5"
+            const backgrounds = [
+              "bg-blue-50/80 dark:bg-blue-950/20",
+              "bg-purple-50/80 dark:bg-purple-950/20", 
+              "bg-orange-50/80 dark:bg-orange-950/20",
+              "bg-green-50/80 dark:bg-green-950/20",
+              "bg-indigo-50/80 dark:bg-indigo-950/20",
+              "bg-amber-50/80 dark:bg-amber-950/20"
             ];
             
             return (
               <div
                 key={service.title}
-                className={`group p-8 rounded-2xl ${gradients[index % gradients.length]} border border-border/50 hover:border-logo-blue/50 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg`}
+                className={`group p-8 rounded-2xl ${backgrounds[index % backgrounds.length]} border border-border/50 hover:border-logo-blue/50 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg relative overflow-hidden`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:glow-primary transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5 dark:to-black/20" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:glow-primary transition-all duration-300 relative z-10">
                   <service.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
-                <h3 className="font-display text-xl font-semibold mb-3">
+                <h3 className="font-display text-xl font-semibold mb-3 relative z-10">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed relative z-10">
                   {service.description}
                 </p>
               </div>
@@ -118,24 +119,25 @@ const Services = () => {
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {financeServices.map((service, index) => {
             const Icon = service.icon;
-            const gradients = [
-              "bg-gradient-to-l from-slate-800/5 to-slate-600/5",
-              "bg-gradient-to-b from-blue-800/5 to-cyan-600/5", 
-              "bg-gradient-to-tr from-purple-800/5 to-pink-600/5"
+            const backgrounds = [
+              "bg-rose-50/80 dark:bg-rose-950/20",
+              "bg-teal-50/80 dark:bg-teal-950/20", 
+              "bg-violet-50/80 dark:bg-violet-950/20"
             ];
             
             return (
               <div
                 key={service.title}
-                className={`group p-8 rounded-2xl ${gradients[index % gradients.length]} border border-border/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full shadow-sm hover:shadow-lg`}
+                className={`group p-8 rounded-2xl ${backgrounds[index % backgrounds.length]} border border-border/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full shadow-sm hover:shadow-lg relative overflow-hidden`}
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:glow-primary transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5 dark:to-black/20" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:glow-primary transition-all duration-300 relative z-10">
                   <Icon className="w-7 h-7 text-primary-foreground" />
                 </div>
-                <h3 className="font-display text-xl font-semibold mb-3">
+                <h3 className="font-display text-xl font-semibold mb-3 relative z-10">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed flex-grow">
+                <p className="text-muted-foreground leading-relaxed flex-grow relative z-10">
                   {service.description}
                 </p>
               </div>
