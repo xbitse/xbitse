@@ -29,7 +29,6 @@ const Header = () => {
     { href: "#rut", label: "RUT-avdrag" },
     { href: "/prislista", label: "Prislista" },
     { href: "#about", label: "Om oss" },
-    { href: "#testimonials", label: "Kundomdömen" },
     { href: "#contact", label: "Kontakt" },
   ];
 
