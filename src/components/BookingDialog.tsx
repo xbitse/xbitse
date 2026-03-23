@@ -21,7 +21,6 @@ import {
 } from "@/components/ui/select";
 import { Calendar as CalendarIcon, Clock, Phone, Mail, User, AlertTriangle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { format } from "date-fns";
@@ -66,7 +65,6 @@ const timeLabels: { [key: string]: string } = {
 
 const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
   const { toast } = useToast();
-  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -254,19 +252,7 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
       return;
     }
     
-    // Execute reCAPTCHA v3
-    if (!executeRecaptcha) {
-      toast({
-        title: "Fel",
-        description: "reCAPTCHA är inte tillgänglig. Vänligen ladda om sidan.",
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
     try {
-      const token = await executeRecaptcha("booking_form");
-      
       // Skapa e-postmeddelande
       const serviceLabels: { [key: string]: string } = {
         dator: "Datorhjälp",
