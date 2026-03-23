@@ -61,13 +61,11 @@ const CTA = () => {
 
               {/* Right side - Image */}
               <div className="relative">
-                <div className="rounded-2xl overflow-hidden bg-gradient-primary/10 p-8">
-                  <img 
-                    src="/xbit-support.png" 
-                    alt="IT-support tekniker hjälper kund med datorproblem" 
-                    className="w-full h-auto rounded-lg shadow-lg"
-                  />
-                </div>
+                <img 
+                  src="/xbit-support.png" 
+                  alt="IT-support tekniker hjälper kund med datorproblem" 
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </div>
