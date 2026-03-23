@@ -46,18 +46,18 @@ const faqItems = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-32 relative overflow-hidden">
+    <section id="faq" className="py-32 relative overflow-hidden bg-[#004188] dark:bg-gradient-hero">
       <div className="absolute inset-0 bg-gradient-hero opacity-50" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-logo-blue font-medium text-sm tracking-wider uppercase">
+          <span className="text-logo-blue dark:text-logo-blue font-medium text-sm tracking-wider uppercase text-white">
             Vanliga frågor
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
+          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6 text-white dark:text-foreground">
             Frågor & <span className="text-gradient">Svar</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-lg text-white/90 dark:text-muted-foreground">
             Här svarar vi på de vanligaste frågorna om våra tjänster, RUT-avdrag och hur vi arbetar.
           </p>
         </div>
@@ -68,12 +68,12 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="px-6 py-2 rounded-lg glass border border-border/50 hover:border-primary/50 transition-all"
+                className="px-6 py-2 rounded-lg glass border border-border/50 hover:border-primary/50 transition-all bg-white/10 dark:bg-background"
               >
-                <AccordionTrigger className="text-left font-display font-semibold text-lg hover:no-underline">
+                <AccordionTrigger className="text-left font-display font-semibold text-lg hover:no-underline text-white dark:text-foreground">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">
+                <AccordionContent className="text-muted-foreground leading-relaxed text-white/90 dark:text-muted-foreground">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>
