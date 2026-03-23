@@ -63,6 +63,35 @@ window.location.href = `${import.meta.env.BASE_URL}${link.href}`;
 window.location.href = link.href; // for hash links on non-home pages
 ```
 
+## Asset Path Rules
+
+### Images and Static Assets
+**CRITICAL:** Always use `import.meta.env.BASE_URL` for images in React components:
+
+```tsx
+// CORRECT - works in both environments
+<img src={`${import.meta.env.BASE_URL}image-name.png`} alt="description" />
+
+// WRONG - breaks GitHub Pages
+<img src="/image.png" alt="description" />
+
+// WRONG - breaks production builds  
+<img src="./image.png" alt="description" />
+```
+
+### Environment Values
+- **Local:** `BASE_URL = "./"`
+- **Production:** `BASE_URL = "/xbitse/"`
+
+### Navigation Links
+- **Hash links:** Use simple format `#section-id`
+- **Page links:** Use React Router `Link to="/path"`
+- **NEVER** use `import.meta.env.BASE_URL` in navigation
+
+### Favicon and Meta Tags
+- Use absolute paths with cache-busting: `href="/favicon.ico?v=5"`
+- These work because they're in HTML head, not React components
+
 ## Development Commands
 
 ```bash
