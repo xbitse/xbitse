@@ -9,7 +9,7 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ 
-      backgroundImage: 'url(/spring-background.png)',
+      backgroundImage: 'url(./spring-background.png)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
