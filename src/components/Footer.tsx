@@ -8,7 +8,7 @@ const Footer = () => {
 
   const handleHashLink = (hash: string) => {
     if (!isHomePage) {
-      window.location.href = `#${hash}`;
+      window.location.href = `${import.meta.env.BASE_URL}#${hash}`;
     }
   };
 
@@ -121,13 +121,13 @@ const Footer = () => {
               © {new Date().getFullYear()} XBIT - Teknik & IT-Support AB. Alla rättigheter förbehållna.
             </p>
             <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-              <a href="#/integritetspolicy" className="hover:text-foreground transition-colors">
+              <a href={`${import.meta.env.BASE_URL}#/integritetspolicy`} className="hover:text-foreground transition-colors">
                 Integritetspolicy
               </a>
-              <a href="#/anvandarvillkor" className="hover:text-foreground transition-colors">
+              <a href={`${import.meta.env.BASE_URL}#/anvandarvillkor`} className="hover:text-foreground transition-colors">
                 Villkor
               </a>
-              <a href="#/cookie-policy" className="hover:text-foreground transition-colors">
+              <a href={`${import.meta.env.BASE_URL}#/cookie-policy`} className="hover:text-foreground transition-colors">
                 Cookie-policy
               </a>
             </div>
