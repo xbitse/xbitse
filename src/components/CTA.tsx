@@ -62,10 +62,11 @@ const CTA = () => {
               {/* Right side - Image */}
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden bg-gradient-primary/10 p-8">
-                  {/* TODO: Add uploaded image here */}
-                  <div className="w-full h-64 bg-muted/20 rounded-lg flex items-center justify-center">
-                    <span className="text-muted-foreground">IT-support image</span>
-                  </div>
+                  <img 
+                    src="/xbit-support.png" 
+                    alt="IT-support tekniker hjälper kund med datorproblem" 
+                    className="w-full h-auto rounded-lg shadow-lg"
+                  />
                 </div>
               </div>
             </div>
