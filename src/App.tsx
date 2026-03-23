@@ -24,10 +24,10 @@ const App = () => (
           <CookieConsent />
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/prislista" element={<Prislista />} />
-            <Route path="/integritetspolicy" element={<Integritetspolicy />} />
-            <Route path="/anvandarvillkor" element={<Anvandarvillkor />} />
-            <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="#/prislista" element={<Prislista />} />
+            <Route path="#/integritetspolicy" element={<Integritetspolicy />} />
+            <Route path="#/anvandarvillkor" element={<Anvandarvillkor />} />
+            <Route path="#/cookie-policy" element={<CookiePolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
