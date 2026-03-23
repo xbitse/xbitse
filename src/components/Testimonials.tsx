@@ -60,38 +60,51 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="glass border border-border/50 rounded-xl p-6 hover:border-primary/50 transition-all duration-300"
+              className="group relative bg-card border border-border/50 rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
-              {/* Rating */}
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-4 h-4 fill-primary"
-                  />
-                ))}
+              {/* Content */}
+              <div className="relative z-10">
+                {/* Rating */}
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-primary"
+                    />
+                  ))}
+                </div>
+
+                {/* Quote */}
+                <Quote className="w-6 h-6 text-primary/20 mb-4" />
+
+                {/* Testimonial */}
+                <blockquote className="text-muted-foreground leading-relaxed mb-6 text-sm">
+                  "{testimonial.text}"
+                </blockquote>
+
+                {/* Author */}
+                <div className="flex items-start justify-between">
+                  <div>
+                    <div className="font-semibold text-foreground">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {testimonial.company}
+                    </div>
+                    <div className="text-xs text-primary mt-1 font-medium">
+                      {testimonial.service}
+                    </div>
+                  </div>
+                  
+                  {/* Avatar placeholder */}
+                  <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                </div>
               </div>
 
-              {/* Quote */}
-              <Quote className="w-8 h-8 text-primary/20 mb-4" />
-
-              {/* Testimonial */}
-              <blockquote className="text-muted-foreground leading-relaxed mb-6">
-                "{testimonial.text}"
-              </blockquote>
-
-              {/* Author */}
-              <div>
-                <div className="font-semibold text-foreground">
-                  {testimonial.name}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {testimonial.company}
-                </div>
-                <div className="text-xs text-primary mt-1">
-                  {testimonial.service}
-                </div>
-              </div>
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-xl transition-opacity duration-300 group-hover:opacity-10" />
             </div>
           ))}
         </div>
