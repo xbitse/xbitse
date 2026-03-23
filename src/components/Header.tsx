@@ -68,7 +68,7 @@ const Header = () => {
 
                 if (!isHomePage) {
                   // Navigate to home page first, then scroll to section
-                  window.location.href = `${import.meta.env.BASE_URL}${link.href}`;
+                  window.location.href = `${link.href}`;
                 } else {
                   // Already on home page, scroll directly to section
                   const targetId = link.href.substring(1); // Remove the #

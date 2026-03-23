@@ -8,7 +8,7 @@ const Footer = () => {
 
   const handleHashLink = (hash: string) => {
     if (!isHomePage) {
-      window.location.href = `${import.meta.env.BASE_URL}#${hash}`;
+      window.location.href = `#${hash}`;
     }
   };
 
