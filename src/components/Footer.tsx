@@ -8,7 +8,7 @@ const Footer = () => {
 
   const handleHashLink = (hash: string) => {
     if (!isHomePage) {
-      window.location.href = `${import.meta.env.BASE_URL}#${hash}`;
+      window.location.href = `#${hash}`;
     }
   };
 
@@ -32,7 +32,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a 
-                  href={isHomePage ? "#services" : `${import.meta.env.BASE_URL}#services`} 
+                  href={isHomePage ? "#services" : "#services"} 
                   onClick={() => handleHashLink("#services")}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
@@ -41,7 +41,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href={isHomePage ? "#services" : `${import.meta.env.BASE_URL}#services`} 
+                  href={isHomePage ? "#services" : "#services"} 
                   onClick={() => handleHashLink("#services")}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
@@ -50,7 +50,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href={isHomePage ? "#rut" : `${import.meta.env.BASE_URL}#rut`} 
+                  href={isHomePage ? "#rut" : "#rut"} 
                   onClick={() => handleHashLink("#rut")}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
@@ -59,7 +59,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href={isHomePage ? "#ekonomitjanster" : `${import.meta.env.BASE_URL}#ekonomitjanster`} 
+                  href={isHomePage ? "#ekonomitjanster" : "#ekonomitjanster"} 
                   onClick={() => handleHashLink("#ekonomitjanster")}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
@@ -121,13 +121,13 @@ const Footer = () => {
               © {new Date().getFullYear()} XBIT - Teknik & IT-Support AB. Alla rättigheter förbehållna.
             </p>
             <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-              <a href={`${import.meta.env.BASE_URL}#/integritetspolicy`} className="hover:text-foreground transition-colors">
+              <a href="#/integritetspolicy" className="hover:text-foreground transition-colors">
                 Integritetspolicy
               </a>
-              <a href={`${import.meta.env.BASE_URL}#/anvandarvillkor`} className="hover:text-foreground transition-colors">
+              <a href="#/anvandarvillkor" className="hover:text-foreground transition-colors">
                 Villkor
               </a>
-              <a href={`${import.meta.env.BASE_URL}#/cookie-policy`} className="hover:text-foreground transition-colors">
+              <a href="#/cookie-policy" className="hover:text-foreground transition-colors">
                 Cookie-policy
               </a>
             </div>
