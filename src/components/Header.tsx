@@ -12,7 +12,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === "/" || location.hash === "#/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +25,7 @@ const Header = () => {
   const navLinks = [
     { href: "#services", label: "Tjänster" },
     { href: "#rut", label: "RUT-avdrag" },
-    { href: "/prislista", label: "Prislista" },
+    { href: "#/prislista", label: "Prislista" },
     { href: "#about", label: "Om oss" },
     { href: "#contact", label: "Kontakt" },
   ];
