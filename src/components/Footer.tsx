@@ -1,5 +1,5 @@
 import { Mail, Phone } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Logo from "./Logo";
 
 const Footer = () => {
@@ -121,15 +121,15 @@ const Footer = () => {
               © {new Date().getFullYear()} XBIT - Teknik & IT-Support AB. Alla rättigheter förbehållna.
             </p>
             <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-              <a href={`${import.meta.env.BASE_URL}#/integritetspolicy`} className="hover:text-foreground transition-colors">
+              <Link to="/integritetspolicy" className="hover:text-foreground transition-colors">
                 Integritetspolicy
-              </a>
-              <a href={`${import.meta.env.BASE_URL}#/anvandarvillkor`} className="hover:text-foreground transition-colors">
+              </Link>
+              <Link to="/anvandarvillkor" className="hover:text-foreground transition-colors">
                 Villkor
-              </a>
-              <a href={`${import.meta.env.BASE_URL}#/cookie-policy`} className="hover:text-foreground transition-colors">
+              </Link>
+              <Link to="/cookie-policy" className="hover:text-foreground transition-colors">
                 Cookie-policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>
