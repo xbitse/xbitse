@@ -10,8 +10,13 @@ const CTA = () => {
     <section id="contact" className="py-32 relative">
       <div className="container mx-auto px-6">
         <div className="relative rounded-3xl overflow-hidden">
-          {/* Background */}
-          <div className="absolute inset-0 bg-gradient-primary opacity-10" />
+          {/* Animated gradient background */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/15 to-primary/20 animate-gradient-shift" />
+            <div className="absolute inset-0 bg-gradient-to-l from-blue-500/10 via-purple-500/10 to-orange-500/10 animate-gradient-reverse" />
+          </div>
+          
+          {/* Glass overlay */}
           <div className="absolute inset-0 glass" />
           
           {/* Decorative Elements */}
