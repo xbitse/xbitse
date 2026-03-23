@@ -60,7 +60,7 @@ const Testimonials = () => {
         </div>
 
         {/* Auto-scrolling container - wider cards, no scrollbar */}
-        <div className="overflow-x-auto overflow-y-hidden pb-6">
+        <div className="overflow-x-auto overflow-y-hidden pb-6 scrollbar-hide">
           <div className="flex gap-8 min-w-max md:min-w-0 animate-scroll-slow">
             {testimonials.map((testimonial, index) => (
               <article

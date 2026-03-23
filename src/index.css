@@ -163,6 +163,19 @@
     animation: scroll-horizontal 30s linear infinite;
   }
 
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide::-moz-scrollbar {
+    display: none;
+  }
+
   @keyframes scroll-horizontal {
     0% {
       transform: translateX(0);
