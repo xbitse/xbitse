@@ -72,23 +72,34 @@ const Services = () => {
 
         {/* IT Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className="group p-8 rounded-2xl bg-gradient-card border border-border/50 hover:border-logo-blue/50 transition-all duration-300 hover:-translate-y-1"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:glow-primary transition-all duration-300">
-                <service.icon className="w-7 h-7 text-primary-foreground" />
+          {services.map((service, index) => {
+            const gradients = [
+              "bg-gradient-to-br from-blue-500/10 to-cyan-500/10",
+              "bg-gradient-to-br from-purple-500/10 to-pink-500/10", 
+              "bg-gradient-to-br from-orange-500/10 to-red-500/10",
+              "bg-gradient-to-br from-green-500/10 to-emerald-500/10",
+              "bg-gradient-to-br from-indigo-500/10 to-blue-500/10",
+              "bg-gradient-to-br from-amber-500/10 to-yellow-500/10"
+            ];
+            
+            return (
+              <div
+                key={service.title}
+                className={`group p-8 rounded-2xl ${gradients[index % gradients.length]} border border-border/50 hover:border-logo-blue/50 transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:glow-primary transition-all duration-300">
+                  <service.icon className="w-7 h-7 text-primary-foreground" />
+                </div>
+                <h3 className="font-display text-xl font-semibold mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="font-display text-xl font-semibold mb-3">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Finance Services */}
@@ -107,11 +118,16 @@ const Services = () => {
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {financeServices.map((service, index) => {
             const Icon = service.icon;
+            const gradients = [
+              "bg-gradient-to-br from-rose-500/10 to-pink-500/10",
+              "bg-gradient-to-br from-teal-500/10 to-cyan-500/10", 
+              "bg-gradient-to-br from-violet-500/10 to-purple-500/10"
+            ];
             
             return (
               <div
                 key={service.title}
-                className="group p-8 rounded-2xl bg-gradient-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
+                className={`group p-8 rounded-2xl ${gradients[index % gradients.length]} border border-border/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full backdrop-blur-sm`}
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6 group-hover:glow-primary transition-all duration-300">
                   <Icon className="w-7 h-7 text-primary-foreground" />
