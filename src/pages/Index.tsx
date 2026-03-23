@@ -10,7 +10,7 @@ const RutInfo = lazy(() => import("@/components/RutInfo"));
 const About = lazy(() => import("@/components/About"));
 const CTA = lazy(() => import("@/components/CTA"));
 const FAQ = lazy(() => import("@/components/FAQ"));
-const Testimonials = lazy(() => import("@/components/TestimonialsGoogle"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
 
 const Index = () => {
   return (
